@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    position: relative;
+    background-color: rgba(140, 136, 128, 0.5);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg-body{
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+header ul{
+    padding-top: 30px;
+    display: flex;
+    list-style: none;
+    font-size: 18px;
+    justify-content:space-around;
+    height: 80px;
+}
+header ul .head2{
+    display: flex;
+}
+header ul li{
+    margin-right: 30px;
+}
+header ul li a{
+    text-decoration: none;
+    color: black;
+}
+.head2 li a:hover{
+    border-top: 0;
+    border-right: 0;
+    border-left:0 ;
+    border-bottom: 1px solid black;
+    box-shadow: 0.01px 0.01px 80px 10px rgb(143, 141, 136,0.5);
+}
+figure{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.gallery{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(400px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+.gallery div img{
+    width: 100%;
+    border: 2px solid rgb(174, 173, 173);
+    cursor:pointer;
+    transition: transform 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+.slider-model{
+    position: absolute;
+    display: none;
+    position: fixed;
+    width: 100%;
+    max-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9345234);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    overflow: hidden;
+}
+.slider-container{
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    overflow: hidden;
+    max-height: 95vh;
+    max-width: 100%;
+    object-fit: contain;
+    top: 24px;
+    bottom: 2px;
+}
+.slider-container img{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    flex-shrink: 3;
+}
+.close-btn,.prev-btn, .next-btn {
+    z-index: 2100;
+    display: none;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    user-select: none;
+}
+.close-btn{
+    top: 10%;
+    right: 10%;
+    transform: translateY(0);
+}
+.prev-btn{
+    left: 10px;
+}
+.next-btn{
+    right: 10px;
+}
